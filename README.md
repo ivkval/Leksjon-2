@@ -1,3 +1,3 @@
 # Leksjon-2
 
-HTML, CSS og JavaScript
+### HTML, CSS og JavaScript
