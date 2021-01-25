@@ -25,7 +25,7 @@ body {
     min-height: 100vh;
     width: 100%;
     grid-template-rows: 63px 50px 1fr;
-    grid-template-columns: auto;
+    grid-template-columns: auto 0.7fr auto;
     grid-template-areas:
         "header header header"
         ". . ."
@@ -64,11 +64,13 @@ a {
 main {
     grid-area: main;
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
 form {
     display: flex;
+    width: 100%;
     flex-direction: column;
 }
 
@@ -116,19 +118,23 @@ button[type="submit"] {
 
 #todo-container {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px 40px;
 }
 
 #todo-container > header {
     color: var(--text-font-color);
-    grid-column-start: span 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-self: center;
+    justify-self: center;
     background-color: var(--main-bg-color);
     width: 282px;
     height: 163px;
@@ -161,14 +167,6 @@ button[type="submit"] {
 }
 
 @media screen and (max-width: 800px) {
-    body {
-        grid-template-columns: 100%;
-        grid-template-areas:
-            "header"
-            "."
-            "main"
-            ".";
-    }
     
     #main {
         margin: 0 20px;
